@@ -1,0 +1,40 @@
+@font-face {
+    font-family: gilroy;
+    src: url(./Gilroy-Light.otf);
+}
+
+body,html{
+    font-family: gilroy;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    background-color: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location{
+    width: 30vw;
+    height: 30vw;
+    background-color: darkcyan;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.location__button{
+    background-color: turquoise;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-family: gilroy;
+    font-size: 2rem;
+    margin: 5%;
+    cursor: pointer;
+}
+
+.location__button:hover{
+    background-color: white;
+    color: turquoise;
+}
