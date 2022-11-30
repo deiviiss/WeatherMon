@@ -17,6 +17,7 @@ function success(pos) {
     console.log(`Latitud : ${crd.latitude}`);
     console.log(`Longitud: ${crd.longitude}`);
     console.log(`Más o menos ${crd.accuracy} metros.`);
+    console.log( getWeather(crd.latitude, crd.longitude))
 }
 
 function error(err) {
