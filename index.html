@@ -10,14 +10,27 @@
     <link rel="shortcut icon" href="images/season.png" type="image/png">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
+
+    <script defer src="scripts/api-data.js"></script>
+    <script defer src="scripts/get-location.js"></script>
 </head>
 <body>
     
     <section class="location" >
-        <button class="location__button">Ubicación</button>
+        <button class="location__button">Permitir Ubicación</button>
     </section>
 
-    <script src="scripts/api-data.js"></script>
-    <script src="scripts/get-location.js"></script>
+    <section class="information">
+        <div id="place">
+            <p id="place__country"></p>
+            <p id="place__city"></p>
+        </div>
+        <div id="environment">
+            <img id="icon" src="" />
+            <p id="environment__sky"></p>
+            <p id="environment__temperature"></p>
+        </div>
+    </section>
+
 </body>
 </html>
