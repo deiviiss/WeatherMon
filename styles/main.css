@@ -20,7 +20,7 @@ body,html{
     align-items: center;
 }
 
-.location{
+#location{
     width: 30vw;
     height: 16vh;
     background-color: darkcyan;
@@ -43,4 +43,14 @@ body,html{
 .location__button:hover{
     background-color: white;
     color: turquoise;
+}
+#information {
+    width: 30vw;
+    height: 60vh;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
