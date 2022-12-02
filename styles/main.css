@@ -1,46 +1,152 @@
+@charset "UTF-8";
+
 @font-face {
-    font-family: gilroy;
-    src: url(./Gilroy-Light.otf);
+  font-family: gilroy;
+  src: url(./Gilroy-Light.otf);
 }
 
+/* Variables */
+:root {
+  --primary-color: #008b8b;
+  --secondary-color: #40e0d0;
+  --white: #ffffff;
+  --black: #000000;
+  --switch: #5f626d;
+}
+
+/*  globals */
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-body,html{
-    font-family: gilroy;
-    font-size: 62.5%;
-    width: 100vw;
-    height: 100%;
-    overflow: hidden;
-    background-color: turquoise;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.location{
-    width: 30vw;
-    height: 16vh;
-    background-color: darkcyan;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.location__button{
-    background-color: turquoise;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-family: gilroy;
-    font-size: 3.2rem;
-    margin: 5%;
-    cursor: pointer;
+body,
+html {
+  font-family: gilroy;
+  font-size: 16px;
+  /* darkmode basic */
+  background: var(--white);
+  color: var(--black);
+
+  /* remove when more info */
+  height: 100vh;
 }
 
-.location__button:hover{
-    background-color: white;
-    color: turquoise;
+.wrapper {
+  padding: 0 30px;
+}
+
+/* =======================  darkmode */
+.darkmode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.darkmode .checkbox {
+  display: none;
+}
+
+/* condition to check input status
+if the sibling selector is checked, with ~ I indicate the sibling */
+.checkbox:checked ~ .switch:before {
+  transform: translateX(0);
+}
+
+.switch {
+  display: block;
+  background: var(--switch);
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  /* prevents another element from being selected on multiple clicks */
+  user-select: none;
+}
+
+.switch::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--white);
+  /* move element */
+  transform: translateX(30px);
+  transition: 0.3s;
+  will-change: transition;
+}
+
+/* =======================  header */
+.header {
+  padding-top: 32px;
+  padding-bottom: 100px;
+}
+
+/* =======================  location section */
+.card {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px 0;
+  background-color: var(--primary-color);
+}
+
+.location {
+  width: 100%;
+}
+
+.location__button {
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.location__button:hover {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+
+.is-dark-mode {
+  --black: #fefefe;
+  --white: #000000;
+  --switch: linear-gradient(
+    to right,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+}
+
+.is-light-mode {
+  --black: #000000;
+  --white: #fefefe;
+  --switch: #5f626d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: #fefefe;
+    --white: #1d2029;
+    --switch: linear-gradient(
+      to right,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
+  }
 }

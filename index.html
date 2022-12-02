@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherMon</title>
-    <meta name="description" content="La app online que combina reportes del clima con el mundo Pokémon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherMon</title>
+  <meta name="description" content="La app online que combina reportes del clima con el mundo Pokémon">
 
-    <link rel="shortcut icon" href="assets/pikachu.png" type="image/png">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/main.css">
+  <link rel="shortcut icon" href="assets/pikachu.png" type="image/png">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/main.css">
 
-    <script defer src="scripts/api-data.js"></script>
-    <script defer src="scripts/get-location.js"></script>
+  <script defer src="scripts/api-data.js"></script>
+  <script defer src="scripts/get-location.js"></script>
 </head>
+
 <body>
-    
-    <section class="location" >
-        <button class="location__button">Permitir Ubicación</button>
-    </section>
 
-    <section class="information">
-        <div id="place">
-            <p id="place__country"></p>
-            <p id="place__city"></p>
-        </div>
-        <div id="environment">
-            <img id="icon" src="" />
-            <p id="environment__sky"></p>
-            <p id="environment__temperature"></p>
-        </div>
-    </section>
+  <header class="header">
+    <div class="wrapper">
 
+      <div>
+        <div class="darkmode">
+          <p>
+            Dark Mode
+          </p>
+          <input type="checkbox" class="checkbox" id="checkbox">
+          <label class="switch" for="checkbox"></label>
+
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <section class="location">
+    <div class="wrapper">
+      <article class="card">
+        <button id="btn__location" class="location__button">Permitir Ubicación</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- <section class="information">
+      <div id="place">
+        <p id="place__country"></p>
+        <p id="place__city"></p>
+      </div>
+      <div id="environment">
+        <img id="icon" src="" />
+        <p id="environment__sky"></p>
+        <p id="environment__temperature"></p>
+      </div>
+    </section> -->
+  <script defer src="scripts/dark-mode.js"></script>
 </body>
+
 </html>
